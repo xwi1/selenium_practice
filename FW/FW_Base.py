@@ -16,8 +16,19 @@ class FWBase:
 
     def click_element(self, locator):
         el = self.find_element(locator)
-        el.click()
+        driver = self.GetDriver()
+        driver.execute_script("arguments[0].click();", el)
         return self
+    
+    def switch_to_next_tab(self):
+        driver = self.GetDriver()
+        wait = WebDriverWait(driver, 10)
+        wait.until(EC.number_of_windows_to_be(2))
+        window_handles = driver.window_handles
+        driver.switch_to.window(window_handles[1])
+
+        # Ожидание для того, чтобы можно было страницу посмотреть :)
+
 
     def find_elements(self, locator, wait=30):
         return WebDriverWait(self.GetDriver(), wait).until(EC.presence_of_all_elements_located(locator))

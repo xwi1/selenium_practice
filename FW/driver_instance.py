@@ -12,6 +12,7 @@ class DriverInstance:
 
     def get_driver(self):
         option = webdriver.ChromeOptions()
+        option.add_argument("--remote-debugging-port=9222")
 
         if self.settings.browser['NoSandBox']:
             option.add_argument('--no-sandbox')

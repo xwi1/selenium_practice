@@ -6,5 +6,5 @@ class Settings:
     }
 
     page = {
-        'Link': 'https://mail.ru'
+        'Link': 'https://dzen.ru/'
     }
