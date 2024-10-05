@@ -27,8 +27,6 @@ class FWBase:
         window_handles = driver.window_handles
         driver.switch_to.window(window_handles[1])
 
-        # Ожидание для того, чтобы можно было страницу посмотреть :)
-
 
     def find_elements(self, locator, wait=30):
         return WebDriverWait(self.GetDriver(), wait).until(EC.presence_of_all_elements_located(locator))

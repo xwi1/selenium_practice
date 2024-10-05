@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/xwi/Desktop/dev/testing/testautomation3/.venv"
+set -gx VIRTUAL_ENV "/home/xwi/Desktop/dev/testing/selenium_practice/.venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

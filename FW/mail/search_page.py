@@ -7,6 +7,7 @@ from FW.mail.any_page import AnyPage
 class Locator:
     iframe_search = (By.XPATH, '//iframe[@class="yandex-frame"]')
     wiki_link = (By.XPATH, '//a[contains(@href, "wiki")]')
+    knyag_text = (By.XPATH, '//*[contains(text(), "Княгинино")]')
 
 
 class SearchPage(AnyPage):
@@ -17,6 +18,9 @@ class SearchPage(AnyPage):
     def open_wiki_page(self):
         self.click_element(locator=Locator.wiki_link)
         time.sleep(10)
+        elements = self.find_elements(Locator.knyag_text)
+        assert len(elements) > 0, "Элементов с надписью 'Княгинино' не найдено"
+
 
 
         
